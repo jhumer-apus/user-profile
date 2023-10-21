@@ -95,7 +95,7 @@ const clearPhotoFileInput = () => {
                     class="hidden"
                     @change="updatePhotoPreview"
                 >
-
+ 
                 <InputLabel for="photo" value="Photo" />
 
                 <!-- Current Profile Photo -->

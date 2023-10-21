@@ -13,10 +13,14 @@ class GalleryController extends Controller
     public function index() {
 
         $lol = asset('storage/profile-photos/XbYWfvc5w4LiB2xvNXrZNXmfSnR9xhup4zRsU1rF.png');
-;
         return Inertia::render('Gallery/Show', [
-            'photos' => [$lol,$lol]
+            'photos' => [$lol,$lol, $lol, $lol, $lol, $lol, $lol, $lol ,$lol, $lol, $lol, $lol, $lol, $lol]
         ]);
     }
+    public function add(Request $request) {
+
+        Log::info($request);
+    }
+
 
 }

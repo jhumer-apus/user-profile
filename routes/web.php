@@ -34,7 +34,11 @@ Route::middleware([
 
 ])->prefix('user')->group(function () {
 
-    Route::get('/gallery', [GalleryController::class, 'index']);
+    Route::prefix('gallery')->group(function () {
+
+        Route::get('/', [GalleryController::class, 'index']);
+        Route::get('/add-photo', [GalleryController::class, 'add']);
+    });
 
 });
 
