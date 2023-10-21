@@ -4,6 +4,8 @@ use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
+use App\Http\Controllers\GalleryController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,6 +25,19 @@ Route::get('/', function () {
         'phpVersion' => PHP_VERSION,
     ]);
 });
+
+Route::middleware([
+
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified',
+
+])->prefix('user')->group(function () {
+
+    Route::get('/gallery', [GalleryController::class, 'index']);
+
+});
+
 
 Route::middleware([
     'auth:sanctum',
